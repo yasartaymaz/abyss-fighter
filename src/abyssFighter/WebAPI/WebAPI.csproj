@@ -30,6 +30,6 @@
     <Folder Include="logs\" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="dotnet csharpier $(ProjectDir)" />
+    <!--<Exec Command="dotnet csharpier $(ProjectDir)" />-->
   </Target>
 </Project>

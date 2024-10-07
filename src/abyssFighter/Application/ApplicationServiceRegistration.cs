@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.UsersService;
@@ -20,6 +20,23 @@ using NArchitecture.Core.Mailing;
 using NArchitecture.Core.Mailing.MailKit;
 using NArchitecture.Core.Security.DependencyInjection;
 using NArchitecture.Core.Security.JWT;
+using Application.Services.DefinitionArmors;
+using Application.Services.DefinitionArmorParts;
+using Application.Services.DefinitionArmorTypes;
+using Application.Services.DefinitionHeroClasses;
+using Application.Services.DefinitionItems;
+using Application.Services.DefinitionItemTypes;
+using Application.Services.DefinitionPets;
+using Application.Services.DefinitionPetTypes;
+using Application.Services.DefinitionWalletTypes;
+using Application.Services.DefinitionWeapons;
+using Application.Services.DefinitionWeaponTypes;
+using Application.Services.UserHeroes;
+using Application.Services.UserInventories;
+using Application.Services.UserInventoryEquippedItems;
+using Application.Services.UserPets;
+using Application.Services.UserPetDetails;
+using Application.Services.UserWallets;
 
 namespace Application;
 
@@ -61,6 +78,23 @@ public static class ApplicationServiceRegistration
 
         services.AddSecurityServices<Guid, int, Guid>(tokenOptions);
 
+        services.AddScoped<IDefinitionArmorService, DefinitionArmorManager>();
+        services.AddScoped<IDefinitionArmorPartService, DefinitionArmorPartManager>();
+        services.AddScoped<IDefinitionArmorTypeService, DefinitionArmorTypeManager>();
+        services.AddScoped<IDefinitionHeroClassService, DefinitionHeroClassManager>();
+        services.AddScoped<IDefinitionItemService, DefinitionItemManager>();
+        services.AddScoped<IDefinitionItemTypeService, DefinitionItemTypeManager>();
+        services.AddScoped<IDefinitionPetService, DefinitionPetManager>();
+        services.AddScoped<IDefinitionPetTypeService, DefinitionPetTypeManager>();
+        services.AddScoped<IDefinitionWalletTypeService, DefinitionWalletTypeManager>();
+        services.AddScoped<IDefinitionWeaponService, DefinitionWeaponManager>();
+        services.AddScoped<IDefinitionWeaponTypeService, DefinitionWeaponTypeManager>();
+        services.AddScoped<IUserHeroService, UserHeroManager>();
+        services.AddScoped<IUserInventoryService, UserInventoryManager>();
+        services.AddScoped<IUserInventoryEquippedItemService, UserInventoryEquippedItemManager>();
+        services.AddScoped<IUserPetService, UserPetManager>();
+        services.AddScoped<IUserPetDetailService, UserPetDetailManager>();
+        services.AddScoped<IUserWalletService, UserWalletManager>();
         return services;
     }
 
