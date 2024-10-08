@@ -7,5 +7,6 @@ public class UpdateDefinitionArmorTypeCommandValidator : AbstractValidator<Updat
     public UpdateDefinitionArmorTypeCommandValidator()
     {
         RuleFor(c => c.Id).NotEmpty();
+        RuleFor(c => c.HeroClassId).NotEmpty();
     }
 }

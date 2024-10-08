@@ -13,6 +13,7 @@ public class UpdateDefinitionWeaponCommand : IRequest<UpdatedDefinitionWeaponRes
     public string? Name { get; set; }
     public required bool IsOneHanded { get; set; }
     public required decimal AttackPoints { get; set; }
+    public required decimal DefencePoints { get; set; }
     public required decimal AttackSpeedMultiplier { get; set; }
 
     public class UpdateDefinitionWeaponCommandHandler : IRequestHandler<UpdateDefinitionWeaponCommand, UpdatedDefinitionWeaponResponse>

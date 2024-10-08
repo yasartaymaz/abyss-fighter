@@ -40,6 +40,8 @@ public static class PersistenceServiceRegistration
   services.AddScoped<IUserPetRepository, UserPetRepository>();
   services.AddScoped<IUserPetDetailRepository, UserPetDetailRepository>();
   services.AddScoped<IUserWalletRepository, UserWalletRepository>();
+  services.AddScoped<IDefinitionArmorTypeRepository, DefinitionArmorTypeRepository>();
+  services.AddScoped<IDefinitionWeaponRepository, DefinitionWeaponRepository>();
         return services;
     }
 }

@@ -95,6 +95,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IUserPetService, UserPetManager>();
         services.AddScoped<IUserPetDetailService, UserPetDetailManager>();
         services.AddScoped<IUserWalletService, UserWalletManager>();
+        services.AddScoped<IDefinitionArmorTypeService, DefinitionArmorTypeManager>();
+        services.AddScoped<IDefinitionWeaponService, DefinitionWeaponManager>();
         return services;
     }
 

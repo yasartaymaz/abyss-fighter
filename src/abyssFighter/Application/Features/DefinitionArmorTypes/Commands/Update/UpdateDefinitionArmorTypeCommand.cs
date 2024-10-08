@@ -10,6 +10,7 @@ public class UpdateDefinitionArmorTypeCommand : IRequest<UpdatedDefinitionArmorT
 {
     public Guid Id { get; set; }
     public string? Value { get; set; }
+    public required Guid HeroClassId { get; set; }
 
     public class UpdateDefinitionArmorTypeCommandHandler : IRequestHandler<UpdateDefinitionArmorTypeCommand, UpdatedDefinitionArmorTypeResponse>
     {

@@ -13,5 +13,6 @@ public class DefinitionWeapon : Entity<Guid>
 	public string? Name { get; set; }
 	public bool IsOneHanded { get; set; }
 	public decimal AttackPoints { get; set; }
-	public decimal AttackSpeedMultiplier { get; set; }
+    public decimal DefencePoints { get; set; }
+    public decimal AttackSpeedMultiplier { get; set; }
 }

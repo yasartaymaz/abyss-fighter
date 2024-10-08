@@ -63,6 +63,9 @@ public class RegisterCommand : IRequest<RegisteredResponse>
 
 			await _authBusinessRules.AddUserOperationClaim(createdUser);
 
+			//add hero and items
+			await _authBusinessRules.AddUserHeroAndItems(createdUser.Id);
+
 			AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
 			Domain.Entities.RefreshToken createdRefreshToken = await _authService.CreateRefreshToken(

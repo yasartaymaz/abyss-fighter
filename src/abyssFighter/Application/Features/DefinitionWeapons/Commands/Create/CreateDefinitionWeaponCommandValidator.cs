@@ -7,8 +7,9 @@ public class CreateDefinitionWeaponCommandValidator : AbstractValidator<CreateDe
     public CreateDefinitionWeaponCommandValidator()
     {
         RuleFor(c => c.DefinitionWeaponTypeId).NotEmpty();
-        RuleFor(c => c.IsOneHanded).NotEmpty();
-        RuleFor(c => c.AttackPoints).NotEmpty();
-        RuleFor(c => c.AttackSpeedMultiplier).NotEmpty();
+        RuleFor(c => c.IsOneHanded).NotNull();
+        RuleFor(c => c.AttackPoints).NotNull();
+        RuleFor(c => c.DefencePoints).NotNull();
+        RuleFor(c => c.AttackSpeedMultiplier).NotNull();
     }
 }

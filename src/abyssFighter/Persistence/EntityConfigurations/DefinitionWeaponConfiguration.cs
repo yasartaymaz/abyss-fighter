@@ -15,6 +15,7 @@ public class DefinitionWeaponConfiguration : IEntityTypeConfiguration<Definition
         builder.Property(dw => dw.Name).HasColumnName("Name");
         builder.Property(dw => dw.IsOneHanded).HasColumnName("IsOneHanded").IsRequired();
         builder.Property(dw => dw.AttackPoints).HasColumnName("AttackPoints").IsRequired();
+        builder.Property(dw => dw.DefencePoints).HasColumnName("DefencePoints").IsRequired();
         builder.Property(dw => dw.AttackSpeedMultiplier).HasColumnName("AttackSpeedMultiplier").IsRequired();
         builder.Property(dw => dw.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(dw => dw.UpdatedDate).HasColumnName("UpdatedDate");

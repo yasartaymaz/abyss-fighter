@@ -6,4 +6,5 @@ public class GetListDefinitionArmorTypeListItemDto : IDto
 {
     public Guid Id { get; set; }
     public string? Value { get; set; }
+    public Guid HeroClassId { get; set; }
 }

@@ -6,8 +6,8 @@ public class CreateDefinitionPetTypeCommandValidator : AbstractValidator<CreateD
 {
     public CreateDefinitionPetTypeCommandValidator()
     {
-        //RuleFor(c => c.IsAttack).NotEmpty();
-        //RuleFor(c => c.IsDefence).NotEmpty();
-        //RuleFor(c => c.IsHybrid).NotEmpty();
+        RuleFor(c => c.IsAttack).NotNull();
+        RuleFor(c => c.IsDefence).NotNull();
+        RuleFor(c => c.IsHybrid).NotNull();
     }
 }

@@ -9,6 +9,7 @@ namespace Application.Features.DefinitionArmorTypes.Commands.Create;
 public class CreateDefinitionArmorTypeCommand : IRequest<CreatedDefinitionArmorTypeResponse>
 {
     public string? Value { get; set; }
+    public required Guid HeroClassId { get; set; }
 
     public class CreateDefinitionArmorTypeCommandHandler : IRequestHandler<CreateDefinitionArmorTypeCommand, CreatedDefinitionArmorTypeResponse>
     {

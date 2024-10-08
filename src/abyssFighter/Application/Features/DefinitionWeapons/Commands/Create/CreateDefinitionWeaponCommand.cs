@@ -12,6 +12,7 @@ public class CreateDefinitionWeaponCommand : IRequest<CreatedDefinitionWeaponRes
     public string? Name { get; set; }
     public required bool IsOneHanded { get; set; }
     public required decimal AttackPoints { get; set; }
+    public required decimal DefencePoints { get; set; }
     public required decimal AttackSpeedMultiplier { get; set; }
 
     public class CreateDefinitionWeaponCommandHandler : IRequestHandler<CreateDefinitionWeaponCommand, CreatedDefinitionWeaponResponse>

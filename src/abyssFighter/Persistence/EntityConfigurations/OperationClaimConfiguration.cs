@@ -23,6 +23,10 @@ using Application.Features.UserInventoryEquippedItems.Constants;
 using Application.Features.UserPets.Constants;
 using Application.Features.UserPetDetails.Constants;
 using Application.Features.UserWallets.Constants;
+using Application.Features.DefinitionArmorTypes.Constants;
+using Application.Features.DefinitionWeapons.Constants;
+
+
 
 
 
@@ -365,6 +369,34 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
                 new() { Id = ++lastId, Name = UserWalletsOperationClaims.Create },
                 new() { Id = ++lastId, Name = UserWalletsOperationClaims.Update },
                 new() { Id = ++lastId, Name = UserWalletsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region DefinitionArmorTypes CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = DefinitionArmorTypesOperationClaims.Admin },
+                new() { Id = ++lastId, Name = DefinitionArmorTypesOperationClaims.Read },
+                new() { Id = ++lastId, Name = DefinitionArmorTypesOperationClaims.Write },
+                new() { Id = ++lastId, Name = DefinitionArmorTypesOperationClaims.Create },
+                new() { Id = ++lastId, Name = DefinitionArmorTypesOperationClaims.Update },
+                new() { Id = ++lastId, Name = DefinitionArmorTypesOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region DefinitionWeapons CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = DefinitionWeaponsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = DefinitionWeaponsOperationClaims.Read },
+                new() { Id = ++lastId, Name = DefinitionWeaponsOperationClaims.Write },
+                new() { Id = ++lastId, Name = DefinitionWeaponsOperationClaims.Create },
+                new() { Id = ++lastId, Name = DefinitionWeaponsOperationClaims.Update },
+                new() { Id = ++lastId, Name = DefinitionWeaponsOperationClaims.Delete },
             ]
         );
         #endregion

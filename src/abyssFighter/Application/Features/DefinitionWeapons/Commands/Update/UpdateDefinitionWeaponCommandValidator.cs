@@ -10,6 +10,7 @@ public class UpdateDefinitionWeaponCommandValidator : AbstractValidator<UpdateDe
         RuleFor(c => c.DefinitionWeaponTypeId).NotEmpty();
         RuleFor(c => c.IsOneHanded).NotEmpty();
         RuleFor(c => c.AttackPoints).NotEmpty();
+        RuleFor(c => c.DefencePoints).NotEmpty();
         RuleFor(c => c.AttackSpeedMultiplier).NotEmpty();
     }
 }

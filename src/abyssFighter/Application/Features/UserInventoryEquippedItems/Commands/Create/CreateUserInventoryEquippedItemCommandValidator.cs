@@ -10,7 +10,7 @@ public class CreateUserInventoryEquippedItemCommandValidator : AbstractValidator
         RuleFor(c => c.UserHeroId).NotEmpty();
         RuleFor(c => c.RightHand).NotEmpty();
         RuleFor(c => c.LeftHand).NotEmpty();
-        RuleFor(c => c.IsWeaponOneHanded).NotEmpty();
+        RuleFor(c => c.IsWeaponOneHanded).NotNull();
         RuleFor(c => c.ArmorId).NotEmpty();
         RuleFor(c => c.ConsumableSlot).NotEmpty();
         RuleFor(c => c.Amount).NotEmpty();

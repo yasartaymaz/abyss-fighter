@@ -10,4 +10,5 @@ namespace Domain.Entities;
 public class DefinitionArmorType : Entity<Guid>
 {
     public string? Value { get; set; }
+    public Guid HeroClassId { get; set; }
 }

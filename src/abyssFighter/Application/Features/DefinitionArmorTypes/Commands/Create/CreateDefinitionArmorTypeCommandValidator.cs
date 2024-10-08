@@ -6,5 +6,6 @@ public class CreateDefinitionArmorTypeCommandValidator : AbstractValidator<Creat
 {
     public CreateDefinitionArmorTypeCommandValidator()
     {
+        RuleFor(c => c.HeroClassId).NotEmpty();
     }
 }

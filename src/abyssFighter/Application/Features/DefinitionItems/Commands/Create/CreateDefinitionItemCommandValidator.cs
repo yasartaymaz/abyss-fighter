@@ -8,8 +8,8 @@ public class CreateDefinitionItemCommandValidator : AbstractValidator<CreateDefi
     {
         RuleFor(c => c.DefinitionItemTypeId).NotEmpty();
         RuleFor(c => c.ItemId).NotEmpty();
-        RuleFor(c => c.IsStackable).NotEmpty();
-        RuleFor(c => c.IsWeapon).NotEmpty();
-        RuleFor(c => c.IsArmor).NotEmpty();
+        RuleFor(c => c.IsStackable).NotNull();
+        RuleFor(c => c.IsWeapon).NotNull();
+        RuleFor(c => c.IsArmor).NotNull();
     }
 }

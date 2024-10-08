@@ -6,6 +6,6 @@ public class CreateDefinitionWeaponTypeCommandValidator : AbstractValidator<Crea
 {
     public CreateDefinitionWeaponTypeCommandValidator()
     {
-        RuleFor(c => c.IsOneHanded).NotEmpty();
+        RuleFor(c => c.IsOneHanded).NotNull();
     }
 }
