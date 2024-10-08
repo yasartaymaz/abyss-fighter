@@ -190,6 +190,9 @@ public class AuthBusinessRules : BaseBusinessRules
 			//await _userInventoryRepository.AddAsync(inventoryShieldWeapon);
 
 			//todo: UserInventoryEquippedItems kayitlari
+			//for warrior
+
+			//for knight
 		}
 	}
 }
