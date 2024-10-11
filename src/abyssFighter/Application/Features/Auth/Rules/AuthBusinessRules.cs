@@ -1,4 +1,5 @@
 using Application.Features.Auth.Constants;
+using Application.Features.DefinitionHeroClasses.Constants;
 using Application.Services.Repositories;
 using Application.Services.UserOperationClaims;
 using Domain.Entities;
@@ -124,14 +125,14 @@ public class AuthBusinessRules : BaseBusinessRules
 			Random rnd = new Random();
 			int indexOfHeroClass = rnd.Next(heroClassList.Count);
 			//DefinitionHeroClass chosenHeroClass = heroClassList[indexOfHeroClass];
-			DefinitionHeroClass chosenHeroClass = heroClassList[0];
+			DefinitionHeroClass chosenHeroClass = heroClassList[indexOfHeroClass];
 
 			UserHero userHero = new UserHero
 			{
 				Id = Guid.NewGuid(),
 				UserId = userId,
 				DefinitionHeroClassId = chosenHeroClass.Id,
-				Name = "Name #" + rnd.Next(1000).ToString(),
+				Name = chosenHeroClass.Value + " Name #" + rnd.Next(1000).ToString(),
 				CreatedDate = DateTime.Now
 			};
 
@@ -180,19 +181,42 @@ public class AuthBusinessRules : BaseBusinessRules
 				CreatedDate = DateTime.Now
 			};
 
-			//for warrior
-			await _userInventoryRepository.AddAsync(inventoryArmor);
-			await _userInventoryRepository.AddAsync(inventory2hWeapon);
+			if (chosenHeroClass.Id == DefinitionHeroClassConstants.Warrior)
+			{
+				//for warrior
+				await _userInventoryRepository.AddAsync(inventoryArmor);
+				await _userInventoryRepository.AddAsync(inventory2hWeapon);
 
-			//for knight
-			//await _userInventoryRepository.AddAsync(inventoryArmor);
-			//await _userInventoryRepository.AddAsync(inventory1hWeapon);
-			//await _userInventoryRepository.AddAsync(inventoryShieldWeapon);
+				await _userInventoryEquippedItemRepository.AddAsync(new UserInventoryEquippedItem
+				{
+					Id = Guid.NewGuid(),
+					UserId = userId,
+					UserHeroId = userHero.Id,
+					RightHand = inventory2hWeapon.Id,
+					ArmorId = inventoryArmor.Id,
+					IsWeaponOneHanded = false,
+					CreatedDate = DateTime.Now
+				});
+			}
+			else if (chosenHeroClass.Id == DefinitionHeroClassConstants.Knight)
+			{
+				//for knight
+				await _userInventoryRepository.AddAsync(inventoryArmor);
+				await _userInventoryRepository.AddAsync(inventory1hWeapon);
+				await _userInventoryRepository.AddAsync(inventoryShieldWeapon);
 
-			//todo: UserInventoryEquippedItems kayitlari
-			//for warrior
-
-			//for knight
+				await _userInventoryEquippedItemRepository.AddAsync(new UserInventoryEquippedItem
+				{
+					Id = Guid.NewGuid(),
+					UserId = userId,
+					UserHeroId = userHero.Id,
+					RightHand = inventory1hWeapon.Id,
+					LeftHand = inventoryShieldWeapon.Id,
+					ArmorId = inventoryArmor.Id,
+					IsWeaponOneHanded = false,
+					CreatedDate = DateTime.Now
+				});
+			}
 		}
 	}
 }
